@@ -1,0 +1,179 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<!--    <title>Convention de Stage</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 20px;-->
+<!--        }-->
+<!--        h1, h2, h3 {-->
+<!--            color: #1a237e;-->
+<!--        }-->
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        h2, h3 {-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+<!--        p {-->
+<!--            line-height: 1.5;-->
+<!--        }-->
+<!--        table {-->
+<!--            width: 100%;-->
+<!--            border-collapse: collapse;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+<!--        th, td {-->
+<!--            border: 1px solid #ddd;-->
+<!--            padding: 8px;-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--        th {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+<!--        .footer {-->
+<!--            margin-top: 30px;-->
+<!--            text-align: center;-->
+<!--            font-style: italic;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>Convention de Stage</h1>-->
+
+<!--<h2>Entre l'Entreprise, l'Étudiant et l'Encadrant</h2>-->
+
+<!--<h3>1. Parties Concernées</h3>-->
+<!--<p>Cette convention est conclue entre :</p>-->
+<!--<ul>-->
+<!--    <li>L'Entreprise <span th:text="${stage.getEntreprise().getNom()}"></span>, </li>-->
+<!--    <li>L'Étudiant <span th:text="${stage.getEtudiant().getNom()}"></span>, inscrit(e) en <span th:text="${stage.getEtudiant().getFiliere()}"></span> </li>-->
+<!--    <li>L'Encadrant de stage <span th:text="${stage.getEncadrant().getNom()}"></span>, <span th:text="${stage.getEncadrant().getNom()}"></span></li>-->
+<!--</ul>-->
+
+<!--<h3>2. Objectifs du Stage</h3>-->
+<!--<p>Le stage a pour objectif de permettre à l'Étudiant d'acquérir des compétences pratiques dans le domaine de (domaine du stage).</p>-->
+
+<!--<h3>3. Durée et Période</h3>-->
+<!--<p>Le stage se déroulera du (date de début) au (date de fin) pour une durée totale de (nombre de semaines) semaines.</p>-->
+
+<!--<h3>4. Missions et Responsabilités</h3>-->
+<!--<p>L'Étudiant s'engage à accomplir les missions suivantes :</p>-->
+
+
+<!--<h3>5. Obligations de l'Entreprise</h3>-->
+<!--<p>L'Entreprise s'engage à :</p>-->
+<!--<ul>-->
+<!--    <li>Fournir un environnement de travail propice à l'apprentissage</li>-->
+<!--    <li>Encadrer l'Étudiant tout au long du stage</li>-->
+<!--    &lt;!&ndash; Ajoutez d'autres obligations de l'entreprise au besoin &ndash;&gt;-->
+<!--</ul>-->
+
+<!--<h3>6. Evaluation du Stage</h3>-->
+<!--<p>Le stage fera l'objet d'une évaluation conjointe entre l'Entreprise, l'Étudiant et l'Encadrant. L'Étudiant remettra un rapport de stage détaillé à la fin de la période de stage.</p>-->
+
+<!--<div class="footer">-->
+<!--    <p>Fait en deux exemplaires, à (lieu), le (date)</p>-->
+<!--    <p>Signature de l'Entreprise: ___________________________</p>-->
+<!--    <p>Signature de l'Étudiant: ___________________________</p>-->
+<!--    <p>Signature de l'Encadrant: __________________________</p>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convention de Stage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #1a237e;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2, h3 {
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Convention de Stage</h1>
+
+<h2>Entre l'Entreprise, l'Étudiant et l'Encadrant</h2>
+
+<h3>1. Parties Concernées</h3>
+<p>Cette convention est conclue entre :</p>
+<ul>
+    <!-- Informations de l'Entreprise -->
+    <li>L'Entreprise <span th:text="${stage.getEntreprise().getNom()}"></span>, située à <span th:text="${stage.getEntreprise().getAddress()}"></span></li>
+
+    <!-- Informations de l'Étudiant -->
+    <li>L'Étudiant <span th:text="${stage.getEtudiant().getNom()}"></span> <span th:text="${stage.getEtudiant().getPrenom()}"></span>, inscrit(e) en <span th:text="${stage.getEtudiant().getFiliere()}"></span> </li>
+
+    <!-- Informations de l'Encadrant -->
+    <li>L'Encadrant de stage <span th:text="${stage.getEncadrant().getNom()}"></span> <span th:text="${stage.getEncadrant().getPrenom()}"></span>, travaillant au département <span th:text="${stage.getEncadrant().getDepartement()}"></span></li>
+</ul>
+
+<h3>2. Objectifs du Stage</h3>
+<p>Le stage a pour objectif de permettre à l'Étudiant d'acquérir des compétences pratiques dans le domaine de <span th:text="${stage.getFiliere()}"></span>.</p>
+
+<h3>3. Durée et Période</h3>
+<p>Le stage se déroulera du <span th:text="${stage.getDateDebut()}"></span> au <span th:text="${stage.getDateFin()}"></span> .</p>
+
+
+
+<h3>4. Obligations de l'Entreprise</h3>
+<p>L'Entreprise s'engage à :</p>
+<ul>
+    <li>Fournir un environnement de travail propice à l'apprentissage</li>
+    <li>Encadrer l'Étudiant tout au long du stage</li>
+    <!-- Ajoutez d'autres obligations de l'entreprise au besoin -->
+</ul>
+
+<h3>5. Evaluation du Stage</h3>
+<p>Le stage fera l'objet d'une évaluation conjointe entre l'Entreprise, l'Étudiant et l'Encadrant. L'Étudiant remettra un rapport de stage détaillé à la fin de la période de stage.</p>
+
+<div class="footer">
+
+    <p>Signature de l'Entreprise: ___________________________</p>
+    <p>Signature de l'Étudiant: ___________________________</p>
+    <p>Signature de l'Encadrant: __________________________</p>
+</div>
+
+</body>
+</html>
